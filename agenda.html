@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Cap Bon Explorer — Agenda des événements</title>
+</head>
+<body>
+    <header>
+        <div>
+            <a href="index.html">
+                <img src="images/logo.jpg" alt="Logo Cap Bon Explorer">
+                <span>Cap Bon Explorer</span>
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="activites.html">Activités</a></li>
+                <li><a href="agenda.html">Agenda</a></li>
+                <li><a href="reservation.html">Réservation</a></li>
+                <li><a href="contact.html">Contact / FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h1>Agenda culturel et saisonnier du Cap Bon</h1>
+            <p>
+                Retrouvez les prochains événements, festivals, marchés artisanaux et sorties organisées à travers la région. 
+                Filtrez le calendrier par période ou par ville pour préparer votre venue.
+            </p>
+        </section>
+        <section aria-label="Filtres de l'agenda">
+            <h2>Filtrer les événements</h2>
+            <form action="agenda.html">
+                <div>
+                    <label for="filtre-mois">Mois :</label>
+                    <select id="filtre-mois" name="mois">
+                        <option value="tous">Tous les mois</option>
+                        <option value="Mars">Mars</option>
+                        <option value="Avril">Avril</option>
+                        <option value="Mai">Mai</option>
+                        <option value="Juin">Juin</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="filtre-ville-agenda">Ville :</label>
+                    <select id="filtre-ville-agenda" name="ville">
+                        <option value="toutes">Toutes les villes</option>
+                        <option value="Nabeul">Nabeul</option>
+                        <option value="Hammamet">Hammamet</option>
+                        <option value="Kélibia">Kélibia</option>
+                        <option value="El Haouaria">El Haouaria</option>
+                        <option value="Korba">Korba</option>
+                    </select>
+                </div>
+                <button type="reset">Réinitialiser</button>
+            </form>
+        </section>
+        <section>
+            <h2>Événements à venir</h2>
+            <article>
+                <h3>Foire de la Poterie et de la Céramique</h3>
+                <p>Date : 14 mars 2026 | Ville : Nabeul</p>
+                <p>Lieu : Place des Artisans, Médina de Nabeul | Entrée : Gratuite</p>
+                <p>Exposition-vente réunissant les maîtres potiers du Cap Bon avec démonstrations de tournage en direct et ateliers ouverts au public.</p>
+            </article>
+            <article>
+                <h3>Festival de la Fleur d'Oranger (Zhar)</h3>
+                <p>Date : 5 avril 2026 | Ville : Nabeul</p>
+                <p>Lieu : Jardins de Dar Chaâbane et centre-ville | Entrée : Gratuite</p>
+                <p>Célébration traditionnelle de la distillation de l'eau de fleur d'oranger, dégustations de pâtisseries locales et animations musicales.</p>
+            </article>
+            <article>
+                <h3>Journée d'Observation des Oiseaux Migrateurs</h3>
+                <p>Date : 19 avril 2026 | Ville : Korba</p>
+                <p>Lieu : Réserve naturelle des lagunes de Korba | Tarif : 15 TND</p>
+                <p>Sortie encadrée par des ornithologues pour observer les flamants roses et les espèces migratrices du printemps.</p>
+            </article>
+            <article>
+                <h3>Festival de l'Épervier</h3>
+                <p>Date : 10 mai 2026 | Ville : El Haouaria</p>
+                <p>Lieu : Colline du Djebel El Haouaria | Entrée : Gratuite</p>
+                <p>Démonstrations ancestrales de fauconnerie, spectacles folkloriques et randonnées guidées vers les grottes puniques.</p>
+            </article>
+            <article>
+                <h3>Rencontres Musicales de la Kasbah</h3>
+                <p>Date : 6 juin 2026 | Ville : Hammamet</p>
+                <p>Lieu : Fort et remparts d'Hammamet | Tarif : 25 TND</p>
+                <p>Soirée acoustique en plein air face à la mer mettant à l'honneur le patrimoine musical tunisien et méditerranéen.</p>
+            </article>
+            <article>
+                <h3>Régate Côtière du Cap Bon</h3>
+                <p>Date : 21 juin 2026 | Ville : Kélibia</p>
+                <p>Lieu : Port de pêche et plage d'El Mansourah, Kélibia | Entrée : Gratuite</p>
+                <p>Compétition nautique traditionnelle et initiation à la voile légère suivie d'une dégustation de produits de la mer.</p>
+            </article>
+        </section>
+        <section>
+            <h2>Calendrier synthétique</h2>
+            <table>
+                <caption>Programmation culturelle du printemps 2026</caption>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Événement</th>
+                        <th>Ville</th>
+                        <th>Accès</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>14 mars 2026</td>
+                        <td>Foire de la Poterie et de la Céramique</td>
+                        <td>Nabeul</td>
+                        <td>Gratuit</td>
+                    </tr>
+                    <tr>
+                        <td>5 avril 2026</td>
+                        <td>Festival de la Fleur d'Oranger (Zhar)</td>
+                        <td>Nabeul</td>
+                        <td>Gratuit</td>
+                    </tr>
+                    <tr>
+                        <td>19 avril 2026</td>
+                        <td>Journée d'Observation des Oiseaux Migrateurs</td>
+                        <td>Korba</td>
+                        <td>15 TND</td>
+                    </tr>
+                    <tr>
+                        <td>10 mai 2026</td>
+                        <td>Festival de l'Épervier</td>
+                        <td>El Haouaria</td>
+                        <td>Gratuit</td>
+                    </tr>
+                    <tr>
+                        <td>6 juin 2026</td>
+                        <td>Rencontres Musicales de la Kasbah</td>
+                        <td>Hammamet</td>
+                        <td>25 TND</td>
+                    </tr>
+                    <tr>
+                        <td>21 juin 2026</td>
+                        <td>Régate Côtière du Cap Bon</td>
+                        <td>Kélibia</td>
+                        <td>Gratuit</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="index.html">Retour à l’accueil</a></li>
+                <li><a href="activites.html">Catalogue des activités</a></li>
+                <li><a href="agenda.html">Agenda des événements</a></li>
+                <li><a href="reservation.html">Simulateur de réservation</a></li>
+                <li><a href="contact.html">Contact et FAQ</a></li>
+            </ul>
+        </nav>
+        <p>&copy; 2026 Cap Bon Explorer — Projet pédagogique ISET Nabeul (données et tarifs fictifs).</p>
+    </footer>
+</body>
+</html>

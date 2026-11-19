@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Cap Bon Explorer — Contact et FAQ</title>
+</head>
+<body>
+    <header>
+        <div>
+            <a href="index.html">
+                <img src="images/logo.jpg" alt="Logo Cap Bon Explorer">
+                <span>Cap Bon Explorer</span>
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="activites.html">Activités</a></li>
+                <li><a href="agenda.html">Agenda</a></li>
+                <li><a href="reservation.html">Réservation</a></li>
+                <li><a href="contact.html">Contact / FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h1>Contact et Foire Aux Questions (FAQ)</h1>
+            <p>
+                Une question sur nos parcours, les modalités de réservation ou les accès aux sites du Cap Bon ? 
+                Consultez nos réponses fréquentes ou envoyez-nous directement un message.
+            </p>
+        </section>
+        <section>
+            <h2>Questions fréquentes (FAQ)</h2>
+            <details>
+                <summary>Comment fonctionne la remise groupe sur les réservations ?</summary>
+                <p>
+                    Toute réservation effectuée pour <strong>4 participants ou plus</strong> sur une même activité bénéficie automatiquement d'une réduction de <strong>10 %</strong> sur le montant total de la prestation.
+                </p>
+            </details>
+            <details>
+                <summary>Les tarifs affichés sur le site sont-ils définitifs ?</summary>
+                <p>
+                    Les tarifs et créneaux présentés sur Cap Bon Explorer sont fournis à titre indicatif dans le cadre d'une simulation pédagogique de préparation de séjour.
+                </p>
+            </details>
+            <details>
+                <summary>Puis-je modifier ou annuler une demande de réservation ?</summary>
+                <p>
+                    Oui, vous pouvez modifier la date ou le nombre de participants jusqu'à 48 heures avant le début de l'activité en nous contactant via le formulaire ci-dessous.
+                </p>
+            </details>
+            <details>
+                <summary>Les activités sont-elles adaptées aux familles avec enfants ?</summary>
+                <p>
+                    La majorité de nos parcours (découverte de la médina de Nabeul, atelier de poterie, observation des lagunes de Korba) sont accessibles aux enfants accompagnés d'un adulte.
+                </p>
+            </details>
+            <details>
+                <summary>Comment se rendre aux points de départ des activités ?</summary>
+                <p>
+                    Les lieux de rendez-vous précis (médina de Nabeul, site de Kerkouane, fort de Kélibia) sont indiqués dans le récapitulatif. Une option navette locale peut également être ajoutée lors de la simulation.
+                </p>
+            </details>
+        </section>
+        <section>
+            <h2>Nous envoyer un message</h2>
+            <form>
+                <div>
+                    <label for="contact-nom">Nom complet * :</label>
+                    <input type="text" id="contact-nom" name="nom" required>
+                </div>
+                <div>
+                    <label for="contact-email">Adresse e-mail * :</label>
+                    <input type="email" id="contact-email" name="email" required>
+                </div>
+                <div>
+                    <label for="contact-sujet">Sujet de votre demande * :</label>
+                    <select id="contact-sujet" name="sujet" required>
+                        <option value="">-- Choisissez un sujet --</option>
+                        <option value="info-activite">Renseignement sur une activité</option>
+                        <option value="groupe">Demande pour un groupe / école</option>
+                        <option value="partenariat">Partenariat artisan ou guide local</option>
+                        <option value="autre">Autre question</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="contact-message">Votre message * :</label>
+                    <textarea id="contact-message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit">Envoyer le message</button>
+            </form>
+        </section>
+        <aside>
+            <h2>Nos coordonnées</h2>
+            <address>
+                <p><strong>Cap Bon Explorer — Bureau d'information</strong></p>
+                <p>Avenue Habib Bourguiba, 8000 Nabeul, Tunisie</p>
+                <p>Téléphone : <a href="tel:+21672000000">+216 72 000 000</a></p>
+                <p>E-mail : <a href="mailto:contact@capbon-explorer.tn">contact@capbon-explorer.tn</a></p>
+                <p>Horaires d'accueil : Du lundi au samedi, de 08h30 à 17h30.</p>
+            </address>
+        </aside>
+    </main>
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="index.html">Retour à l’accueil</a></li>
+                <li><a href="activites.html">Catalogue des activités</a></li>
+                <li><a href="agenda.html">Agenda des événements</a></li>
+                <li><a href="reservation.html">Simulateur de réservation</a></li>
+                <li><a href="contact.html">Contact et FAQ</a></li>
+            </ul>
+        </nav>
+        <p>&copy; 2026 Cap Bon Explorer — Projet pédagogique ISET Nabeul (données et tarifs fictifs).</p>
+    </footer>
+</body>
+</html>

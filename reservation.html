@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Cap Bon Explorer — Simulateur de réservation</title>
+</head>
+<body>
+    <header>
+        <div>
+            <a href="index.html">
+                <img src="images/logo.jpg" alt="Logo Cap Bon Explorer">
+                <span>Cap Bon Explorer</span>
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="activites.html">Activités</a></li>
+                <li><a href="agenda.html">Agenda</a></li>
+                <li><a href="reservation.html">Réservation</a></li>
+                <li><a href="contact.html">Contact / FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h1>Simulateur de réservation</h1>
+            <p>
+                Estimez instantanément le coût de votre sortie au Cap Bon. 
+                Une remise groupe de 10 % s'applique automatiquement à partir de 4 participants.
+            </p>
+        </section>
+        <section>
+            <h2>Formulaire de simulation</h2>
+            <form>
+                <fieldset>
+                    <legend>1. Choix de l'activité et de la date</legend>
+                    <div>
+                        <label for="select-activite">Activité souhaitée * :</label>
+                        <select id="select-activite" name="activite" required>
+                            <option value="">-- Sélectionnez une activité --</option>
+                            <option value="A01" data-prix="20">A01 — Découverte de la médina (Nabeul) — 20 TND</option>
+                            <option value="A02" data-prix="35">A02 — Atelier d’initiation à la poterie (Nabeul) — 35 TND</option>
+                            <option value="A03" data-prix="30">A03 — Parcours découverte de Kerkouane (Kerkouane) — 30 TND</option>
+                            <option value="A04" data-prix="45">A04 — Dégustation de produits du terroir (Hammamet) — 45 TND</option>
+                            <option value="A05" data-prix="40">A05 — Circuit du littoral (Kélibia) — 40 TND</option>
+                            <option value="A06" data-prix="50">A06 — Randonnée côtière (El Haouaria) — 50 TND</option>
+                            <option value="A07" data-prix="25">A07 — Observation de la nature et des lagunes (Korba) — 25 TND</option>
+                            <option value="A08" data-prix="25">A08 — Visite guidée des remparts et de la médina (Hammamet) — 25 TND</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="date-visite">Date de la visite * :</label>
+                        <input type="date" id="date-visite" name="date" required>
+                    </div>
+                    <div>
+                        <label for="creneau-horaire">Créneau horaire * :</label>
+                        <select id="creneau-horaire" name="creneau" required>
+                            <option value="matin">Matin (09h00)</option>
+                            <option value="apres-midi">Après-midi (14h30)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="nb-participants">Nombre de participants (1 à 20) * :</label>
+                        <input type="number" id="nb-participants" name="participants" min="1" max="20" value="1" required>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>2. Options complémentaires (facultatif)</legend>
+                    <div>
+                        <input type="checkbox" id="opt-guide" name="options" value="guide" data-prix="15">
+                        <label for="opt-guide">Accompagnement par un guide privé (+15 TND forfaitaire)</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="opt-transport" name="options" value="transport" data-prix="10">
+                        <label for="opt-transport">Navette locale aller-retour (+10 TND / personne)</label>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>3. Vos coordonnées</legend>
+                    <div>
+                        <label for="client-nom">Nom et prénom * :</label>
+                        <input type="text" id="client-nom" name="nom" placeholder="Ex. : Amira Ben Ali" required>
+                    </div>
+                    <div>
+                        <label for="client-email">Adresse e-mail * :</label>
+                        <input type="email" id="client-email" name="email" placeholder="exemple@domaine.tn" required>
+                    </div>
+                    <div>
+                        <label for="client-tel">Téléphone * :</label>
+                        <input type="tel" id="client-tel" name="telephone" placeholder="+216 20 000 000" required>
+                    </div>
+                    <div>
+                        <label for="client-remarque">Remarque ou besoin particulier :</label>
+                        <textarea id="client-remarque" name="remarque" rows="3" placeholder="Allergies, accessibilité, langue souhaitée..."></textarea>
+                    </div>
+                </fieldset>
+                <div>
+                    <button type="submit">Valider la simulation</button>
+                    <button type="reset">Effacer le formulaire</button>
+                </div>
+            </form>
+        </section>
+        <aside>
+            <h2>Récapitulatif de votre estimation</h2>
+            <ul>
+                <li>Activité sélectionnée : <span id="recap-activite">Aucune activité sélectionnée</span></li>
+                <li>Tarif unitaire : <span id="recap-prix-unitaire">0 TND</span></li>
+                <li>Nombre de participants : <span id="recap-participants">1</span></li>
+                <li>Options choisies : <span id="recap-options">0 TND</span></li>
+                <li>Remise groupe (10 % dès 4 pers.) : <span id="recap-remise">0 TND</span></li>
+                <li>Total estimé : 0 TND</li>
+            </ul>
+            <p id="message-confirmation">Remplissez le formulaire ci-dessus pour obtenir votre devis détaillé.</p>
+        </aside>
+    </main>
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="index.html">Retour à l’accueil</a></li>
+                <li><a href="activites.html">Catalogue des activités</a></li>
+                <li><a href="agenda.html">Agenda des événements</a></li>
+                <li><a href="reservation.html">Simulateur de réservation</a></li>
+                <li><a href="contact.html">Contact et FAQ</a></li>
+            </ul>
+        </nav>
+        <p>&copy; 2026 Cap Bon Explorer — Projet pédagogique ISET Nabeul (données et tarifs fictifs).</p>
+    </footer>
+</body>
+</html>
