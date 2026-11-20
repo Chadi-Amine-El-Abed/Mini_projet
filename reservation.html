@@ -47,14 +47,14 @@
                         <label for="select-activite">Activité souhaitée:</label>
                         <select id="select-activite" name="activite" required>
                             <option value="">-- Sélectionnez une activité --</option>
-                            <option value="A01">A01 — Découverte de la médina (Nabeul) — 20 TND</option>
-                            <option value="A02">A02 — Atelier d’initiation à la poterie (Nabeul) — 35 TND</option>
-                            <option value="A03">A03 — Parcours découverte de Kerkouane (Kerkouane) — 30 TND</option>
-                            <option value="A04">A04 — Dégustation de produits du terroir (Hammamet) — 45 TND</option>
-                            <option value="A05">A05 — Circuit du littoral (Kélibia) — 40 TND</option>
-                            <option value="A06">A06 — Randonnée côtière (El Haouaria) — 50 TND</option>
-                            <option value="A07">A07 — Observation de la nature et des lagunes (Korba) — 25 TND</option>
-                            <option value="A08">A08 — Visite guidée des remparts et de la médina (Hammamet) — 25 TND</option>
+                            <option value="A01">A01 — Découverte de la médina — Nabeul — 20 TND</option>
+                            <option value="A02">A02 — Atelier d’initiation à la poterie — Nabeul — 35 TND</option>
+                            <option value="A03">A03 — Parcours découverte de Kerkouane — Kerkouane — 30 TND</option>
+                            <option value="A04">A04 — Randonnée découverte — Djebel Abderrahmane — 25 TND</option>
+                            <option value="A05">A05 — Circuit du littoral — Kélibia — 40 TND</option>
+                            <option value="A06">A06 — Peinture sur céramique — Nabeul — 25 TND</option>
+                            <option value="A07">A07 — Découverte d’un marché local — Nabeul — 15 TND</option>
+                            <option value="A08">A08 — Promenade photographique — Hammamet — 30 TND</option>
                         </select>
                     </div>
                     <div>
@@ -69,26 +69,39 @@
                         </select>
                     </div>
                     <div>
-                        <label for="nb-participants">Nombre de participants (1 à 20):</label>
-                        <input type="number" id="nb-participants" name="participants" min="1" max="20" value="1" required>
+                        <label for="nb-participants">Nombre de participants (1 à 6):</label>
+                        <input type="number" id="nb-participants" name="participants" min="1" max="6" value="1" required>
                     </div>
                 </fieldset>
                 <fieldset>
-                    <legend>2. Options complémentaires (facultatif)</legend>
-                    <div>
-                        <input type="checkbox" id="opt-guide" name="options" value="guide">
-                        <label for="opt-guide">Accompagnement par un guide privé (+15 TND forfaitaire)</label>
+                    <legend>2. Modalités de participation</legend>
+                    <div class="mb-3">
+                        <label class="form-label d-block">Type de participation</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="typeParticipation" id="typeIndividuel" value="Individuel" checked>
+                            <label class="form-check-label" for="typeIndividuel">Individuel</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="typeParticipation" id="typeFamille" value="Famille">
+                            <label class="form-check-label" for="typeFamille">Famille</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="typeParticipation" id="typeGroupe" value="Groupe">
+                            <label class="form-check-label" for="typeGroupe">Groupe</label>
+                        </div>
                     </div>
-                    <div>
-                        <input type="checkbox" id="opt-transport" name="options" value="transport">
-                        <label for="opt-transport">Navette locale aller-retour (+10 TND / personne)</label>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="acceptConditions">
+                        <label class="form-check-label" for="acceptConditions">J’accepte les conditions de simulation (aucun paiement réel n’est effectué)</label>
                     </div>
                 </fieldset>
                 <fieldset>
                     <legend>3. Vos coordonnées</legend>
                     <div>
-                        <label for="client-nom">Nom et prénom:</label>
-                        <input type="text" id="client-nom" name="nom" placeholder="Ex. : Chadi Amine El Abed" required>
+                        <label for="client-nom">Nom:</label>
+                        <input type="text" id="client-nom" name="nom" placeholder="Ex. : El Abed" required>
+                        <label for="client-prenom">Prénom:</label>
+                        <input type="text" id="client-prenom" name="prenom" placeholder="Ex. : Chadi Amine" required>
                     </div>
                     <div>
                         <label for="client-email">Adresse e-mail:</label>
@@ -105,7 +118,7 @@
                 </fieldset>
                 <div>
                     <button type="button">Valider la simulation</button>
-                    <button type="reset">Effacer le formulaire</button>
+                    <button type="reset">Réinitialiser</button>
                 </div>
             </form>
         </section>
@@ -115,11 +128,11 @@
                 <li>Activité sélectionnée : <span id="recap-activite">Aucune activité sélectionnée</span></li>
                 <li>Tarif unitaire : <span id="recap-prix-unitaire">0 TND</span></li>
                 <li>Nombre de participants : <span id="recap-participants">1</span></li>
-                <li>Options choisies : <span id="recap-options">0 TND</span></li>
+                <li>Sous-total : <span id="recapSousTotal">0 TND</span></li>
                 <li>Remise groupe (10 % dès 4 pers.) : <span id="recap-remise">0 TND</span></li>
                 <li>Total estimé : 0 TND</li>
             </ul>
-            <p id="message-confirmation">Remplissez le formulaire ci-dessus pour obtenir votre devis détaillé.</p>
+            <p id="message-confirmation">Simulation enregistrée localement à l’écran : aucune réservation réelle n’a été effectuée.</p>
         </aside>
     </main>
     <footer>
