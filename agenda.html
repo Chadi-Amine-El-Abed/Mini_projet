@@ -3,25 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Cap Bon Explorer — Agenda des événements</title>
 </head>
 <body>
     <header>
-        <div>
-            <a href="index.html">
-                <img src="images/logo.jpg" alt="Logo Cap Bon Explorer">
-                <span>Cap Bon Explorer</span>
-            </a>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="activites.html">Activités</a></li>
-                <li><a href="agenda.html">Agenda</a></li>
-                <li><a href="reservation.html">Réservation</a></li>
-                <li><a href="contact.html">Contact / FAQ</a></li>
-            </ul>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom">
+            <div class="container">
+                <div class="navbar-brand d-flex align-items-center gap-2">
+                    <img src="images/logo.jpg" alt="Logo Cap Bon Explorer" class="wiw">
+                </div>
+                <a class="navbar-brand fw-bold" href="index.html">Cap Bon Explorer</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#CapBonExplorer" aria-controls="CapBonExplorer" aria-expanded="false" aria-label="Afficher la navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="CapBonExplorer">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link active" href="index.html">Accueil</a></li>
+                        <li class="nav-item"><a class="nav-link" href="activites.html">Activités</a></li>
+                        <li class="nav-item"><a class="nav-link" href="agenda.html">Agenda</a></li>
+                        <li class="nav-item"><a class="nav-link" href="reservation.html">Réservation</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact / FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
     <main>
@@ -100,14 +106,15 @@
         </section>
         <section>
             <h2>Calendrier synthétique</h2>
-            <table>
+            <div class="table-responsive">
+                <table class="table table-striped table-hover align-middle">
                 <caption>Programmation culturelle du printemps 2026</caption>
-                <thead>
+                <thead class="table-dark">
                     <tr>
-                        <th>Date</th>
-                        <th>Événement</th>
-                        <th>Ville</th>
-                        <th>Accès</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Événement</th>
+                        <th scope="col">Ville</th>
+                        <th scope="col">Accès</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -163,5 +170,6 @@
         </nav>
         <p>&copy; 2026 Cap Bon Explorer — Projet pédagogique ISET Nabeul (données et tarifs fictifs).</p>
     </footer>
+    <script src="bootstrap/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -3,25 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Cap Bon Explorer — Catalogue des activités</title>
 </head>
 <body>
     <header>
-        <div>
-            <a href="index.html">
-                <img src="images/logo.jpg" alt="Logo Cap Bon Explorer">
-                <span>Cap Bon Explorer</span>
-            </a>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="activites.html">Activités</a></li>
-                <li><a href="agenda.html">Agenda</a></li>
-                <li><a href="reservation.html">Réservation</a></li>
-                <li><a href="contact.html">Contact / FAQ</a></li>
-            </ul>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom">
+            <div class="container">
+                <div class="navbar-brand d-flex align-items-center gap-2">
+                    <img src="images/logo.jpg" alt="Logo Cap Bon Explorer" class="wiw">
+                </div>
+                <a class="navbar-brand fw-bold" href="index.html">Cap Bon Explorer</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#CapBonExplorer" aria-controls="CapBonExplorer" aria-expanded="false" aria-label="Afficher la navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="CapBonExplorer">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link active" href="index.html">Accueil</a></li>
+                        <li class="nav-item"><a class="nav-link" href="activites.html">Activités</a></li>
+                        <li class="nav-item"><a class="nav-link" href="agenda.html">Agenda</a></li>
+                        <li class="nav-item"><a class="nav-link" href="reservation.html">Réservation</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact / FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
     <main>
@@ -76,76 +82,124 @@
         <section>
             <h2>Nos expériences proposées</h2>
             <article id="A01">
-                <img src="images/medina nabeul.jpg" alt="Ruelles traditionnelles de la médina de Nabeul">
-                <h3>Découverte de la médina</h3>
-                <p>Référence : A01</p>
-                <p>Ville : Nabeul | Catégorie : Culture</p>
-                <p>Durée : 2 heures | Tarif : 20 TND / personne</p>
-                <p>Parcourez les ruelles animées du centre historique de Nabeul, ses souks traditionnels et son patrimoine architectural authentique.</p>
-                <p><a href="reservation.html">Réserver cette activité</a></p>
+                <div class="col-12 col-md-4">
+                    <div class="card h-100">
+                        <img src="images/medina nabeul.jpg" class="card-img-top" alt="la médina de Nabeul">
+                        <div class="card-body d-flex flex-column">
+                            <h3 class="card-title h5">Découverte de la médina</h3>
+                            <p class="card-text">Référence : A01</p>
+                            <p class="card-text">Ville : Nabeul | Catégorie : Culture</p>
+                            <p class="card-text">Durée : 2 heures | Tarif : 20 TND / personne</p>
+                            <p class="card-text">Parcourez les ruelles animées du centre historique de Nabeul, ses souks traditionnels et son patrimoine architectural authentique.</p>
+                            <a href="reservation.html" class="btn btn-primary mt-auto">Réserver cette activité</a>
+                        </div>
+                    </div>
+                </div>
             </article>
             <article id="A02">
-                <img src="images/poterie nabeul.jpg" alt="Artisan potier façonnant l'argile à Nabeul">
-                <h3>Atelier d’initiation à la poterie</h3>
-                <p>Référence : A02</p>
-                <p>Ville : Nabeul | Catégorie : Artisanat</p>
-                <p>Durée : 3 heures | Tarif : 35 TND / personne</p>
-                <p>Initiez-vous au tournage et à la décoration céramique aux côtés d'un maître artisan dans un atelier traditionnel nabeulien.</p>
-                <p><a href="reservation.html">Réserver cette activité</a></p>
+                <div class="col-12 col-md-4">
+                    <div class="card h-100">
+                        <img src="images/poterie nabeul.jpg" class="card-img-top" alt="Artisan potier façonnant l'argile à Nabeul">
+                        <div class="card-body d-flex flex-column">
+                            <h3 class="card-title h5">Atelier d’initiation à la poterie</h3>
+                            <p class="card-text">Référence : A02</p>
+                            <p class="card-text">Ville : Nabeul | Catégorie : Artisanat</p>
+                            <p class="card-text">Durée : 3 heures | Tarif : 35 TND / personne</p>
+                            <p class="card-text">Initiez-vous au tournage et à la décoration céramique aux côtés d'un maître artisan dans un atelier traditionnel nabeulien.</p>
+                            <a href="reservation.html" class="btn btn-primary mt-auto">Réserver cette activité</a>
+                        </div>
+                    </div>
+                </div>
             </article>
             <article id="A03">
-                <img src="images/kerkouane.jpg" alt="Vestiges de la cité punique de Kerkouane">
-                <h3>Parcours découverte de Kerkouane</h3>
-                <p>Référence : A03</p>
-                <p>Ville : Kerkouane | Catégorie : Culture</p>
-                <p>Durée : 2 heures 30 | Tarif : 30 TND / personne</p>
-                <p>Visite guidée de l'unique cité punique conservée dans son état d'origine, classée au patrimoine mondial de l'UNESCO face à la mer.</p>
-                <p><a href="reservation.html">Réserver cette activité</a></p>
+                <div class="col-12 col-md-4">
+                    <div class="card h-100">
+                        <img src="images/kerkouane.jpg" class="card-img-top" alt="Vestiges de la cité punique de Kerkouane">
+                        <div class="card-body d-flex flex-column">
+                            <h3 class="card-title h5">Parcours découverte de Kerkouane</h3>
+                            <p class="card-text">Référence : A03</p>
+                            <p class="card-text">Ville : Kerkouane | Catégorie : Culture</p>
+                            <p class="card-text">Durée : 2 heures 30 | Tarif : 30 TND / personne</p>
+                            <p class="card-text">Visite guidée de l'unique cité punique conservée dans son état d'origine, classée au patrimoine mondial de l'UNESCO face à la mer.</p>
+                            <a href="reservation.html" class="btn btn-primary mt-auto">Réserver cette activité</a>
+                        </div>
+                    </div>
+                </div>
             </article>
             <article id="A04">
-                <img src="images/degustation hammamet.jpg" alt="Produits du terroir et spécialités locales à Hammamet">
-                <h3>Dégustation de produits du terroir</h3>
-                <p>Référence : A04</p>
-                <p>Ville : Hammamet | Catégorie : Gastronomie</p>
-                <p>Durée : 2 heures | Tarif : 45 TND / personne</p>
-                <p>Savourez les saveurs emblématiques du Cap Bon : huile d'olive, harissa artisanale, agrumes parfumés et douceurs locales.</p>
-                <p><a href="reservation.html">Réserver cette activité</a></p>
+                <div class="col-12 col-md-4">
+                    <div class="card h-100">
+                        <img src="images/degustation hammamet.jpg" class="card-img-top" alt="Produits du terroir et spécialités locales à Hammamet">
+                        <div class="card-body d-flex flex-column">
+                            <h3 class="card-title h5">Dégustation de produits du terroir</h3>
+                            <p class="card-text">Référence : A04</p>
+                            <p class="card-text">Ville : Hammamet | Catégorie : Gastronomie</p>
+                            <p class="card-text">Durée : 2 heures | Tarif : 45 TND / personne</p>
+                            <p class="card-text">Savourez les saveurs emblématiques du Cap Bon : huile d'olive, harissa artisanale, agrumes parfumés et douceurs locales.</p>
+                            <a href="reservation.html" class="btn btn-primary mt-auto">Réserver cette activité</a>
+                        </div>
+                    </div>
+                </div>
             </article>
             <article id="A05">
-                <img src="images/littoral kelibia.JPG" alt="Fort historique et côte turquoise de Kélibia">
-                <h3>Circuit du littoral</h3>
-                <p>Référence : A05</p>
-                <p>Ville : Kélibia | Catégorie : Nature</p>
-                <p>Durée : 4 heures | Tarif : 40 TND / personne</p>
-                <p>Balade panoramique le long des plages de sable fin et des criques cristallines dominées par la forteresse historique de Kélibia.</p>
-                <p><a href="reservation.html">Réserver cette activité</a></p>
+                <div class="col-12 col-md-4">
+                    <div class="card h-100">
+                        <img src="images/littoral kelibia.JPG" class="card-img-top" alt="Fort historique et côte turquoise de Kélibia">
+                        <div class="card-body d-flex flex-column">
+                            <h3 class="card-title h5">Circuit du littoral</h3>
+                            <p class="card-text">Référence : A05</p>
+                            <p class="card-text">Ville : Kélibia | Catégorie : Nature</p>
+                            <p class="card-text">Durée : 4 heures | Tarif : 40 TND / personne</p>
+                            <p class="card-text">Balade panoramique le long des plages de sable fin et des criques cristallines dominées par la forteresse historique de Kélibia.</p>
+                            <a href="reservation.html" class="btn btn-primary mt-auto">Réserver cette activité</a>
+                        </div>
+                    </div>
+                </div>
             </article>
             <article id="A06">
-                <img src="images/randonnee haouaria.jpg" alt="Falaises et grottes marines d'El Haouaria">
-                <h3>Randonnée côtière</h3>
-                <p>Référence : A06</p>
-                <p>Ville : El Haouaria | Catégorie : Nature</p>
-                <p>Durée : 4 heures 30 | Tarif : 50 TND / personne</p>
-                <p>Randonnée pédestre entre falaises escarpées, grottes antiques et panoramas spectaculaires à la pointe extrême du Cap Bon.</p>
-                <p><a href="reservation.html">Réserver cette activité</a></p>
+                <div class="col-12 col-md-4">
+                    <div class="card h-100">
+                        <img src="images/randonnee haouaria.jpg" class="card-img-top" alt="Falaises et grottes marines d'El Haouaria">
+                        <div class="card-body d-flex flex-column">
+                            <h3 class="card-title h5">Randonnée côtière</h3>
+                            <p class="card-text">Référence : A06</p>
+                            <p class="card-text">Ville : El Haouaria | Catégorie : Nature</p>
+                            <p class="card-text">Durée : 4 heures 30 | Tarif : 50 TND / personne</p>
+                            <p class="card-text">Randonnée pédestre entre falaises escarpées, grottes antiques et panoramas spectaculaires à la pointe extrême du Cap Bon.</p>
+                            <a href="reservation.html" class="btn btn-primary mt-auto">Réserver cette activité</a>
+                        </div>
+                    </div>
+                </div>
             </article>
             <article id="A07">
-                <img src="images/lagunes korba.jpg" alt="Oiseaux migrateurs et lagunes naturelles de Korba">
-                <h3>Observation de la nature et des lagunes</h3>
-                <p>Référence : A07</p>
-                <p>Ville : Korba | Catégorie : Nature</p>
-                <p>Durée : 3 heures | Tarif : 25 TND / personne</p>
-                <p>Découverte écologique des zones humides protégées de Korba, refuge privilégié pour les flamants roses et les oiseaux migrateurs.</p>
-                <p><a href="reservation.html">Réserver cette activité</a></p>
+                <div class="col-12 col-md-4">
+                    <div class="card h-100">
+                        <img src="images/lagunes korba.jpg" class="card-img-top" alt="Oiseaux migrateurs et lagunes naturelles de Korba">
+                        <div class="card-body d-flex flex-column">
+                            <h3 class="card-title h5">Observation de la nature et des lagunes</h3>
+                            <p class="card-text">Référence : A07</p>
+                            <p class="card-text">Ville : Korba | Catégorie : Nature</p>
+                            <p class="card-text">Durée : 3 heures | Tarif : 25 TND / personne</p>
+                            <p class="card-text">Découverte écologique des zones humides protégées de Korba, refuge privilégié pour les flamants roses et les oiseaux migrateurs.</p>
+                            <a href="reservation.html" class="btn btn-primary mt-auto">Réserver cette activité</a>
+                        </div>
+                    </div>
+                </div>
             </article>
             <article id="A08">
-                <img src="images/remparts hammamet.jpg" alt="Remparts et médina historique d'Hammamet">
-                <h3>Visite guidée des remparts et de la médina</h3>
-                <p>Référence : A08</p>
-                <p>Ville : Hammamet | Catégorie : Culture</p>
-                <p>Durée : 2 heures | Tarif : 25 TND / personne</p>
-                <p>Exploration historique de la kasbah, des remparts surplombant le golfe et des ruelles blanches fleuries d'Hammamet.</p>
-                <p><a href="reservation.html">Réserver cette activité</a></p>
+                <div class="col-12 col-md-4">
+                    <div class="card h-100">
+                        <img src="images/remparts hammamet.jpg" class="card-img-top" alt="Remparts et médina historique d'Hammamet">
+                        <div class="card-body d-flex flex-column">
+                            <h3 class="card-title h5">Visite guidée des remparts et de la médina</h3>
+                            <p class="card-text">Référence : A08</p>
+                            <p class="card-text">Ville : Hammamet | Catégorie : Culture</p>
+                            <p class="card-text">Durée : 2 heures | Tarif : 25 TND / personne</p>
+                            <p class="card-text">Exploration historique de la kasbah, des remparts surplombant le golfe et des ruelles blanches fleuries d'Hammamet.</p>
+                            <a href="reservation.html" class="btn btn-primary mt-auto">Réserver cette activité</a>
+                        </div>
+                    </div>
+                </div>
             </article>
         </section>
     </main>
@@ -161,5 +215,7 @@
         </nav>
         <p>&copy; 2026 Cap Bon Explorer — Projet pédagogique ISET Nabeul (données et tarifs fictifs).</p>
     </footer>
+    <script src="bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="js/activites.js"></script>
 </body>
 </html>
