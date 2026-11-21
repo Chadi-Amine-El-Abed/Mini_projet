@@ -11,50 +11,11 @@ body {
   color: darkslategray;
   line-height: 1.6;
 }
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
 a {
   color: navy;
   text-decoration: none;
 }
-header {
-  background-color: white;
-  border-bottom: 3px solid coral;
-  padding: 15px 5%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
-header nav { width: 100%; background: transparent !important; }
-header nav ul { margin-left: auto; }
-header div a {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 22px;
-  font-weight: bold;
-  color: navy;
-}
-header nav ul {
-  list-style: none;
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-header nav a {
-  padding: 8px 14px;
-  border-radius: 5px;
-  font-weight: bold;
-  color: darkslategray;
-}
-header nav a:hover {
-  background-color: aliceblue;
-  color: navy;
-}
+
 main {
   width: 90%;
   max-width: 1100px;
@@ -96,12 +57,7 @@ aside a {
   cursor: pointer;
   margin-top: 8px;
 }
-button:hover,
-article a:hover,
-aside a:hover,
-main section:first-child a:hover {
-  background-color: orangered;
-}
+
 article {
   background-color: white;
   border: 1px solid lightgray;
@@ -156,26 +112,13 @@ textarea {
   border-radius: 4px;
   font-size: 15px;
 }
-table {
-  width: 100%;
-  border-collapse: collapse;
-  background-color: white;
-}
+
 caption {
   font-weight: bold;
   margin-bottom: 10px;
   text-align: left;
 }
-th,
-td {
-  padding: 10px;
-  text-align: left;
-  border: 1px solid lightgray;
-}
-thead {
-  background-color: navy;
-  color: white;
-}
+
 details {
   background-color: white;
   border: 1px solid lightgray;
