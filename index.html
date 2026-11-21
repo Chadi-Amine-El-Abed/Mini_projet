@@ -3,27 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cap Bon Explorer — Accueil</title>
     <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <style>
-    .carousel-item img {height:340px;object-fit:cover;}
-    </style>
-    <title>Cap Bon Explorer</title>
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom">
             <div class="container">
-                <div class="navbar-brand d-flex align-items-center gap-2">
+                <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="index.html">
                     <img src="images/logo.jpg" alt="Logo Cap Bon Explorer" class="wiw">
-                </div>
-                <a class="navbar-brand fw-bold" href="index.html">Cap Bon Explorer</a>
+                    <span>Cap Bon Explorer</span>
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#CapBonExplorer" aria-controls="CapBonExplorer" aria-expanded="false" aria-label="Afficher la navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="CapBonExplorer">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link active" href="index.html">Accueil</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="index.html" aria-current="page">Accueil</a></li>
                         <li class="nav-item"><a class="nav-link" href="activites.html">Activités</a></li>
                         <li class="nav-item"><a class="nav-link" href="agenda.html">Agenda</a></li>
                         <li class="nav-item"><a class="nav-link" href="reservation.html">Réservation</a></li>
@@ -34,72 +31,106 @@
         </nav>
     </header>
     <main class="container py-4">
-        <section>
-            <img src="images/banniere-cap-bon.jpg" alt="Paysage côtier et patrimoine du Cap Bon en Tunisie">
-            <h1>Explorez les richesses authentiques du Cap Bon</h1>
-            <p>
-                Cap Bon Explorer vous invite à découvrir le patrimoine, les savoir-faire et les paysages du Cap Bon. 
-                Parcourez nos expériences, choisissez une activité et préparez votre visite grâce à une simulation de réservation simple et transparente.
-            </p>
-            <p>
-                <a href="activites.html">Découvrir les activités</a>
-            </p>
+        <section class="hero">
+            <img id="banner" src="images/banniere-cap-bon.jpg" alt="Falaises et mer du Cap Bon vues d’en haut">
+            <div class="hero-contenu">
+                <h1>Explorez les richesses authentiques du Cap Bon</h1>
+                <p>
+                    Cap Bon Explorer vous invite à découvrir le patrimoine, les savoir-faire et les paysages du Cap Bon.
+                    Parcourez nos expériences, choisissez une activité et préparez votre visite grâce à une simulation de réservation simple et transparente.
+                </p>
+                <a href="activites.html" class="btn btn-primary btn-lg">Découvrir les activités</a>
+            </div>
         </section>
         <section>
             <h2>Qui sommes-nous ?</h2>
             <p>
-                Cap Bon Explorer est une initiative dédiée à la mise en valeur du patrimoine culturel, artisanal et naturel de la péninsule du Cap Bon. 
+                Cap Bon Explorer est une initiative dédiée à la mise en valeur du patrimoine culturel, artisanal et naturel de la péninsule du Cap Bon.
                 Notre équipe passionnée sélectionne des expériences authentiques à Nabeul, Hammamet, Kélibia et Kerkouane pour offrir aux visiteurs un regard privilégié sur les traditions locales.
             </p>
             <p>
-                À travers ce portail interactif, nous facilitons la découverte des artisans potiers, des sites archéologiques puniques et des sentiers côtiers préservés. 
+                À travers ce portail interactif, nous facilitons la découverte des artisans potiers, des sites archéologiques puniques et des sentiers côtiers préservés.
                 Notre objectif est de vous aider à organiser votre séjour en toute simplicité grâce à un catalogue clair et un outil de simulation transparent.
             </p>
         </section>
         <section>
-            <h2>Galerie des Activites</h2>
-            <div id="gelerieactivites" class="carousel slide" data-bs-ride="false">
+            <h2>Galerie des activités</h2>
+            <div id="galerie-activites" class="carousel slide" data-bs-ride="false" aria-label="Galerie des activités">
                 <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#gelerieactivites" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Diapositive 1"></button>
-                    <button type="button" data-bs-target="#gelerieactivites" data-bs-slide-to="1" aria-label="Diapositive 2"></button>
-                    <button type="button" data-bs-target="#gelerieactivites" data-bs-slide-to="2" aria-label="Diapositive 3"></button>
-                    <button type="button" data-bs-target="#gelerieactivites" data-bs-slide-to="3" aria-label="Diapositive 4"></button>
+                    <button type="button" data-bs-target="#galerie-activites" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Diapositive 1"></button>
+                    <button type="button" data-bs-target="#galerie-activites" data-bs-slide-to="1" aria-label="Diapositive 2"></button>
+                    <button type="button" data-bs-target="#galerie-activites" data-bs-slide-to="2" aria-label="Diapositive 3"></button>
+                    <button type="button" data-bs-target="#galerie-activites" data-bs-slide-to="3" aria-label="Diapositive 4"></button>
                 </div>
                 <div class="carousel-inner rounded">
-                    <div class="carousel-item active"><img src="images/medina nabeul.jpg" class="d-block w-100" alt="Ruelles traditionnelles de la médina de Nabeul"></div>
-                    <div class="carousel-item"><img src="images/poterie nabeul.jpg" class="d-block w-100" alt="Artisan façonnant une poterie traditionnelle à Nabeul"></div>
-                    <div class="carousel-item"><img src="images/kerkouane.jpg" class="d-block w-100" alt="Vestiges de la cité punique de Kerkouane"></div>
-                    <div class="carousel-item"><img src="images/littoral kelibia.JPG" class="d-block w-100" alt="Côte rocheuse et mer turquoise à Kélibia"></div>
+                    <div class="carousel-item active">
+                        <img src="images/medina-nabeul.jpg" class="d-block w-100" alt="Monument de céramique couronné d’oranges à Nabeul">
+                        <div class="carousel-caption d-block"><p>Nabeul, ville de céramique et d’agrumes</p></div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/poterie-nabeul.jpg" class="d-block w-100" alt="Artisan potier façonnant une pièce d’argile à Nabeul">
+                        <div class="carousel-caption d-block"><p>Un atelier de poterie à Nabeul</p></div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/kerkouane.jpg" class="d-block w-100" alt="Vestiges de la cité punique de Kerkouane face à la mer">
+                        <div class="carousel-caption d-block"><p>Kerkouane, cité punique face à la mer</p></div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/randonnee-haouaria.jpg" class="d-block w-100" alt="Côte rocheuse et montagne près d’El Haouaria">
+                        <div class="carousel-caption d-block"><p>La côte sauvage près d’El Haouaria</p></div>
+                    </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#gelerieactivites" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Précédent</span></button>
-                <button class="carousel-control-next" type="button" data-bs-target="#gelerieactivites" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Suivant</span></button>
+                <button class="carousel-control-prev" type="button" data-bs-target="#galerie-activites" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Précédent</span></button>
+                <button class="carousel-control-next" type="button" data-bs-target="#galerie-activites" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Suivant</span></button>
             </div>
+        </section>
+        <section>
             <h2>Nos activités à la une</h2>
-            <div>
-                <article>
-                    <h3>Découverte de la médina — Nabeul</h3>
-                    <p>Catégorie : Culture</p>
-                    <p>Tarif : 20 TND</p>
-                    <a href="activites.html">Voir l'activité</a>
-                </article>
-                <article>
-                    <h3>Atelier d’initiation à la poterie — Nabeul</h3>
-                    <p>Catégorie : Artisanat</p>
-                    <p>Tarif : 35 TND</p>
-                    <a href="activites.html">Voir l'activité</a>
-                </article>
-                <article>
-                    <h3>Parcours découverte de Kerkouane — Kerkouane</h3>
-                    <p>Catégorie : Culture</p>
-                    <p>Tarif : 30 TND</p>
-                    <a href="activites.html">Voir l'activité</a>
-                </article>
-                <article>
-                    <h3>Circuit du littoral — Kélibia</h3>
-                    <p>Catégorie : Nature</p>
-                    <p>Tarif : 40 TND</p>
-                    <a href="activites.html">Voir l'activité</a>
-                </article>
+            <div class="row g-4">
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                    <article class="card h-100">
+                        <img src="images/medina-nabeul.jpg" class="card-img-top" alt="Monument de céramique couronné d’oranges, emblème de Nabeul">
+                        <div class="card-body d-flex flex-column">
+                            <h3>Découverte de la médina — Nabeul</h3>
+                            <p><span class="categorie">Culture</span></p>
+                            <p class="prix">20 TND</p>
+                            <a href="activites.html#A01" class="btn btn-outline-primary mt-auto">Voir l’activité</a>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                    <article class="card h-100">
+                        <img src="images/poterie-nabeul.jpg" class="card-img-top" alt="Artisan potier façonnant l’argile sur un tour à Nabeul">
+                        <div class="card-body d-flex flex-column">
+                            <h3>Atelier d’initiation à la poterie — Nabeul</h3>
+                            <p><span class="categorie">Artisanat</span></p>
+                            <p class="prix">35 TND</p>
+                            <a href="activites.html#A02" class="btn btn-outline-primary mt-auto">Voir l’activité</a>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                    <article class="card h-100">
+                        <img src="images/kerkouane.jpg" class="card-img-top" alt="Vestiges de la cité punique de Kerkouane face à la mer">
+                        <div class="card-body d-flex flex-column">
+                            <h3>Parcours découverte de Kerkouane — Kerkouane</h3>
+                            <p><span class="categorie">Culture</span></p>
+                            <p class="prix">30 TND</p>
+                            <a href="activites.html#A03" class="btn btn-outline-primary mt-auto">Voir l’activité</a>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                    <article class="card h-100">
+                        <img src="images/littoral-kelibia.jpg" class="card-img-top" alt="Fort historique de Kélibia dominant la côte">
+                        <div class="card-body d-flex flex-column">
+                            <h3>Circuit du littoral — Kélibia</h3>
+                            <p><span class="categorie">Nature</span></p>
+                            <p class="prix">40 TND</p>
+                            <a href="activites.html#A05" class="btn btn-outline-primary mt-auto">Voir l’activité</a>
+                        </div>
+                    </article>
+                </div>
             </div>
         </section>
         <section>
@@ -108,20 +139,17 @@
                 <li>Un patrimoine historique millénaire : explorez des sites uniques classés comme la cité punique de Kerkouane et les médinas authentiques.</li>
                 <li>Un artisanat vivant et reconnu : rencontrez les maîtres potiers et céramistes de Nabeul, capitale tunisienne de la poterie.</li>
                 <li>Des paysages naturels préservés : profitez de plages sauvages, de criques cristallines à Kélibia et des sentiers du Djebel Abderrahmane.</li>
-                <li>Une gastronomie et des marchés colorés : savourez les produits du terroir, les agrumes parfumés et l'ambiance conviviale des souks locaux.</li>
+                <li>Une gastronomie et des marchés colorés : savourez les produits du terroir, les agrumes parfumés et l’ambiance conviviale des souks locaux.</li>
             </ul>
         </section>
         <aside>
             <h2>Prêt à planifier votre prochaine sortie ?</h2>
-            <p>Estimez gratuitement le budget de votre visite en quelques clics et profitez d'une remise automatique dès 4 participants.</p>
-            <p>
-                <a href="reservation.html">Simuler une réservation</a>
-            </p>
+            <p>Estimez gratuitement le budget de votre visite en quelques clics et profitez d’une remise automatique dès 4 participants.</p>
+            <a href="reservation.html" class="btn btn-primary">Simuler une réservation</a>
         </aside>
-
     </main>
     <footer>
-        <nav>
+        <nav aria-label="Navigation secondaire">
             <ul>
                 <li><a href="index.html">Retour à l’accueil</a></li>
                 <li><a href="activites.html">Catalogue des activités</a></li>
@@ -133,5 +161,6 @@
         <p>&copy; 2026 Cap Bon Explorer — Projet pédagogique ISET Nabeul (données et tarifs fictifs).</p>
     </footer>
     <script src="bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>

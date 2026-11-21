@@ -3,26 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cap Bon Explorer — Agenda des événements</title>
     <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Cap Bon Explorer — Agenda des événements</title>
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom">
             <div class="container">
-                <div class="navbar-brand d-flex align-items-center gap-2">
+                <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="index.html">
                     <img src="images/logo.jpg" alt="Logo Cap Bon Explorer" class="wiw">
-                </div>
-                <a class="navbar-brand fw-bold" href="index.html">Cap Bon Explorer</a>
+                    <span>Cap Bon Explorer</span>
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#CapBonExplorer" aria-controls="CapBonExplorer" aria-expanded="false" aria-label="Afficher la navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="CapBonExplorer">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link active" href="index.html">Accueil</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
                         <li class="nav-item"><a class="nav-link" href="activites.html">Activités</a></li>
-                        <li class="nav-item"><a class="nav-link" href="agenda.html">Agenda</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="agenda.html" aria-current="page">Agenda</a></li>
                         <li class="nav-item"><a class="nav-link" href="reservation.html">Réservation</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact.html">Contact / FAQ</a></li>
                     </ul>
@@ -30,148 +30,85 @@
             </div>
         </nav>
     </header>
-    <main>
+    <main class="container py-4">
         <section>
             <h1>Agenda culturel et saisonnier du Cap Bon</h1>
             <p>
-                Retrouvez les prochains événements, festivals, marchés artisanaux et sorties organisées à travers la région. 
-                Filtrez le calendrier par période ou par ville pour préparer votre venue.
+                Découvrez le calendrier de nos prochaines sorties culturelles, ateliers artisanaux et randonnées au cœur du Cap Bon.
+                Consultez les dates, horaires et tarifs de chaque événement ci-dessous afin de planifier votre prochaine escapade et réserver votre place en toute simplicité.
             </p>
-        </section>
-        <section>
-            <h2>Filtrer les événements</h2>
-            <form>
-                <div>
-                    <label for="filtre-mois">Mois :</label>
-                    <select id="filtre-mois" name="mois">
-                        <option value="tous">Tous les mois</option>
-                        <option value="Mars">Mars</option>
-                        <option value="Avril">Avril</option>
-                        <option value="Mai">Mai</option>
-                        <option value="Juin">Juin</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="filtre-ville-agenda">Ville :</label>
-                    <select id="filtre-ville-agenda" name="ville">
-                        <option value="toutes">Toutes les villes</option>
-                        <option value="Nabeul">Nabeul</option>
-                        <option value="Hammamet">Hammamet</option>
-                        <option value="Kélibia">Kélibia</option>
-                        <option value="El Haouaria">El Haouaria</option>
-                        <option value="Korba">Korba</option>
-                    </select>
-                </div>
-                <button type="reset">Réinitialiser</button>
-            </form>
-        </section>
-        <section>
-            <h2>Événements à venir</h2>
-            <article>
-                <h3>Foire de la Poterie et de la Céramique</h3>
-                <p>Date : 14 mars 2026 | Ville : Nabeul</p>
-                <p>Lieu : Place des Artisans, Médina de Nabeul | Entrée : Gratuite</p>
-                <p>Exposition-vente réunissant les maîtres potiers du Cap Bon avec démonstrations de tournage en direct et ateliers ouverts au public.</p>
-            </article>
-            <article>
-                <h3>Festival de la Fleur d'Oranger (Zhar)</h3>
-                <p>Date : 5 avril 2026 | Ville : Nabeul</p>
-                <p>Lieu : Jardins de Dar Chaâbane et centre-ville | Entrée : Gratuite</p>
-                <p>Célébration traditionnelle de la distillation de l'eau de fleur d'oranger, dégustations de pâtisseries locales et animations musicales.</p>
-            </article>
-            <article>
-                <h3>Journée d'Observation des Oiseaux Migrateurs</h3>
-                <p>Date : 19 avril 2026 | Ville : Korba</p>
-                <p>Lieu : Réserve naturelle des lagunes de Korba | Tarif : 15 TND</p>
-                <p>Sortie encadrée par des ornithologues pour observer les flamants roses et les espèces migratrices du printemps.</p>
-            </article>
-            <article>
-                <h3>Festival de l'Épervier</h3>
-                <p>Date : 10 mai 2026 | Ville : El Haouaria</p>
-                <p>Lieu : Colline du Djebel El Haouaria | Entrée : Gratuite</p>
-                <p>Démonstrations ancestrales de fauconnerie, spectacles folkloriques et randonnées guidées vers les grottes puniques.</p>
-            </article>
-            <article>
-                <h3>Rencontres Musicales de la Kasbah</h3>
-                <p>Date : 6 juin 2026 | Ville : Hammamet</p>
-                <p>Lieu : Fort et remparts d'Hammamet | Tarif : 25 TND</p>
-                <p>Soirée acoustique en plein air face à la mer mettant à l'honneur le patrimoine musical tunisien et méditerranéen.</p>
-            </article>
-            <article>
-                <h3>Régate Côtière du Cap Bon</h3>
-                <p>Date : 21 juin 2026 | Ville : Kélibia</p>
-                <p>Lieu : Port de pêche et plage d'El Mansourah, Kélibia | Entrée : Gratuite</p>
-                <p>Compétition nautique traditionnelle et initiation à la voile légère suivie d'une dégustation de produits de la mer.</p>
-            </article>
         </section>
         <section>
             <h2>Calendrier synthétique</h2>
             <div class="table-responsive">
                 <table class="table table-striped table-hover align-middle">
-                <caption>Programmation des expériences — Hiver 2026 / 2027</caption>
-                <thead class="table-dark">
-                    <tr>
-                        <th scope="col">Date</th>
-                        <th scope="col">Activité</th>
-                        <th scope="col">Heure</th>
-                        <th scope="col">Lieu</th>
-                        <th scope="col">Tarif</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>05/12/2026</td>
-                        <td>Promenade photographique</td>
-                        <td>09:30</td>
-                        <td>Hammamet</td>
-                        <td>30 TND</td>
-                    </tr>
-                    <tr>
-                        <td>12/12/2026</td>
-                        <td>Initiation à la poterie</td>
-                        <td>10:00</td>
-                        <td>Nabeul</td>
-                        <td>35 TND</td>
-                    </tr>
-                    <tr>
-                        <td>19/12/2026</td>
-                        <td>Randonnée découverte</td>
-                        <td>08:30</td>
-                        <td>Cap Bon</td>
-                        <td>25 TND</td>
-                    </tr>
-                    <tr>
-                        <td>09/01/2027</td>
-                        <td>Découverte de la médina</td>
-                        <td>10:00</td>
-                        <td>Nabeul</td>
-                        <td>20 TND</td>
-                    </tr>
-                    <tr>
-                        <td>16/01/2027</td>
-                        <td>Peinture sur céramique</td>
-                        <td>14:00</td>
-                        <td>Nabeul</td>
-                        <td>25 TND</td>
-                    </tr>
-                    <tr>
-                        <td>23/01/2027</td>
-                        <td>Découverte du marché local</td>
-                        <td>09:00</td>
-                        <td>Nabeul</td>
-                        <td>15 TND</td>
-                    </tr>
-                </tbody>
-            </table>
+                    <caption>Programmation des expériences — Hiver 2026 / 2027</caption>
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">Date</th>
+                            <th scope="col">Activité</th>
+                            <th scope="col">Heure</th>
+                            <th scope="col">Lieu</th>
+                            <th scope="col">Tarif</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><time datetime="2026-12-05">05/12/2026</time></td>
+                            <td>Promenade photographique</td>
+                            <td>09:30</td>
+                            <td>Hammamet</td>
+                            <td>30 TND</td>
+                        </tr>
+                        <tr>
+                            <td><time datetime="2026-12-12">12/12/2026</time></td>
+                            <td>Initiation à la poterie</td>
+                            <td>10:00</td>
+                            <td>Nabeul</td>
+                            <td>35 TND</td>
+                        </tr>
+                        <tr>
+                            <td><time datetime="2026-12-19">19/12/2026</time></td>
+                            <td>Randonnée découverte</td>
+                            <td>08:30</td>
+                            <td>Cap Bon</td>
+                            <td>25 TND</td>
+                        </tr>
+                        <tr>
+                            <td><time datetime="2027-01-09">09/01/2027</time></td>
+                            <td>Découverte de la médina</td>
+                            <td>10:00</td>
+                            <td>Nabeul</td>
+                            <td>20 TND</td>
+                        </tr>
+                        <tr>
+                            <td><time datetime="2027-01-16">16/01/2027</time></td>
+                            <td>Peinture sur céramique</td>
+                            <td>14:00</td>
+                            <td>Nabeul</td>
+                            <td>25 TND</td>
+                        </tr>
+                        <tr>
+                            <td><time datetime="2027-01-23">23/01/2027</time></td>
+                            <td>Découverte du marché local</td>
+                            <td>09:00</td>
+                            <td>Nabeul</td>
+                            <td>15 TND</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
         <section>
-            <h3>Prochaines expériences:</h3>
-            <a href="activites.html">* Catalogue des activités</a><br>
-            <a href="reservation.html">* Simulateur de réservation</a>
+            <h2>Prochaines expériences</h2>
+            <ul>
+                <li><a href="activites.html">Consulter le catalogue des activités</a></li>
+                <li><a href="reservation.html">Simuler une réservation</a></li>
+            </ul>
         </section>
     </main>
     <footer>
-        <nav>
+        <nav aria-label="Navigation secondaire">
             <ul>
                 <li><a href="index.html">Retour à l’accueil</a></li>
                 <li><a href="activites.html">Catalogue des activités</a></li>
@@ -183,5 +120,6 @@
         <p>&copy; 2026 Cap Bon Explorer — Projet pédagogique ISET Nabeul (données et tarifs fictifs).</p>
     </footer>
     <script src="bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>

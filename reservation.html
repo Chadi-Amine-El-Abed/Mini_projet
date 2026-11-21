@@ -3,140 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cap Bon Explorer — Simulateur de réservation</title>
     <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Cap Bon Explorer — Simulateur de réservation</title>
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom">
             <div class="container">
-                <div class="navbar-brand d-flex align-items-center gap-2">
+                <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="index.html">
                     <img src="images/logo.jpg" alt="Logo Cap Bon Explorer" class="wiw">
-                </div>
-                <a class="navbar-brand fw-bold" href="index.html">Cap Bon Explorer</a>
+                    <span>Cap Bon Explorer</span>
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#CapBonExplorer" aria-controls="CapBonExplorer" aria-expanded="false" aria-label="Afficher la navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="CapBonExplorer">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link active" href="index.html">Accueil</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
                         <li class="nav-item"><a class="nav-link" href="activites.html">Activités</a></li>
                         <li class="nav-item"><a class="nav-link" href="agenda.html">Agenda</a></li>
-                        <li class="nav-item"><a class="nav-link" href="reservation.html">Réservation</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="reservation.html" aria-current="page">Réservation</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact.html">Contact / FAQ</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <main>
+    <main class="container py-4">
         <section>
             <h1>Simulateur de réservation</h1>
             <p>
-                Estimez instantanément le coût de votre sortie au Cap Bon. 
-                Une remise groupe de 10 % s'applique automatiquement à partir de 4 participants.
+                Estimez instantanément le coût de votre sortie au Cap Bon.
+                Une remise groupe de 10 % s’applique automatiquement à partir de 4 participants.
             </p>
         </section>
-        <section>
-            <h2>Formulaire de simulation</h2>
-            <form>
-                <fieldset>
-                    <legend>1. Choix de l'activité et de la date</legend>
-                    <div>
-                        <label for="select-activite">Activité souhaitée:</label>
-                        <select id="select-activite" name="activite" required>
-                            <option value="">-- Sélectionnez une activité --</option>
-                            <option value="A01">A01 — Découverte de la médina — Nabeul — 20 TND</option>
-                            <option value="A02">A02 — Atelier d’initiation à la poterie — Nabeul — 35 TND</option>
-                            <option value="A03">A03 — Parcours découverte de Kerkouane — Kerkouane — 30 TND</option>
-                            <option value="A04">A04 — Randonnée découverte — Djebel Abderrahmane — 25 TND</option>
-                            <option value="A05">A05 — Circuit du littoral — Kélibia — 40 TND</option>
-                            <option value="A06">A06 — Peinture sur céramique — Nabeul — 25 TND</option>
-                            <option value="A07">A07 — Découverte d’un marché local — Nabeul — 15 TND</option>
-                            <option value="A08">A08 — Promenade photographique — Hammamet — 30 TND</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="date-visite">Date de la visite:</label>
-                        <input type="date" id="date-visite" name="date" required>
-                    </div>
-                    <div>
-                        <label for="creneau-horaire">Créneau horaire:</label>
-                        <select id="creneau-horaire" name="creneau" required>
-                            <option value="matin">Matin (09h00)</option>
-                            <option value="apres-midi">Après-midi (14h30)</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="nb-participants">Nombre de participants (1 à 6):</label>
-                        <input type="number" id="nb-participants" name="participants" min="1" max="6" value="1" required>
-                    </div>
-                </fieldset>
-                <fieldset>
-                    <legend>2. Modalités de participation</legend>
-                    <div class="mb-3">
-                        <label class="form-label d-block">Type de participation</label>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="typeParticipation" id="typeIndividuel" value="Individuel" checked>
-                            <label class="form-check-label" for="typeIndividuel">Individuel</label>
+        <div class="row g-4">
+            <section class="col-12 col-lg-7">
+                <h2>Formulaire de simulation</h2>
+                <form id="fRes" novalidate>
+                    <fieldset>
+                        <legend>1. Choix de l’activité et de la date</legend>
+                        <div class="row g-3">
+                            <div class="col-12 col-md-6">
+                                <label for="act" class="form-label">Activité souhaitée</label>
+                                <select id="act" name="act" class="form-select" required>
+                                    <option value="">-- Sélectionnez une activité --</option>
+                                </select>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label for="dt" class="form-label">Date de la visite</label>
+                                <input type="date" id="dt" name="dt" class="form-control" required>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label for="creneau-horaire" class="form-label">Créneau horaire</label>
+                                <select id="creneau-horaire" name="creneau" class="form-select">
+                                    <option value="matin">Matin (09h00)</option>
+                                    <option value="apres-midi">Après-midi (14h30)</option>
+                                </select>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label for="nb" class="form-label">Nombre de participants (1 à 6)</label>
+                                <input type="number" id="nb" name="nb" class="form-control" min="1" max="6" value="1" required>
+                            </div>
                         </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="typeParticipation" id="typeFamille" value="Famille">
-                            <label class="form-check-label" for="typeFamille">Famille</label>
+                    </fieldset>
+                    <fieldset>
+                        <legend>2. Modalités de participation</legend>
+                        <div class="mb-3">
+                            <span class="form-label d-block">Type de participation</span>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="typeParticipation" id="typeIndividuel" value="Individuel" checked>
+                                <label class="form-check-label" for="typeIndividuel">Individuel</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="typeParticipation" id="typeFamille" value="Famille">
+                                <label class="form-check-label" for="typeFamille">Famille</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="typeParticipation" id="typeGroupe" value="Groupe">
+                                <label class="form-check-label" for="typeGroupe">Groupe</label>
+                            </div>
                         </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="typeParticipation" id="typeGroupe" value="Groupe">
-                            <label class="form-check-label" for="typeGroupe">Groupe</label>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="ok" required>
+                            <label class="form-check-label" for="ok">J’accepte les conditions de simulation (aucun paiement réel n’est effectué)</label>
                         </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>3. Vos coordonnées</legend>
+                        <div class="row g-3">
+                            <div class="col-12 col-md-6">
+                                <label for="nom" class="form-label">Nom</label>
+                                <input type="text" id="nom" name="nom" class="form-control" placeholder="Ex. : Trabelsi" required>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label for="pre" class="form-label">Prénom</label>
+                                <input type="text" id="pre" name="pre" class="form-control" placeholder="Ex. : Amine" required>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label for="mail" class="form-label">Adresse e-mail</label>
+                                <input type="email" id="mail" name="mail" class="form-control" placeholder="exemple@domaine.tn" required>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label for="tel" class="form-label">Téléphone</label>
+                                <input type="tel" id="tel" name="tel" class="form-control" placeholder="+216 20 000 000" required>
+                            </div>
+                            <div class="col-12">
+                                <label for="remarque" class="form-label">Remarque ou besoin particulier</label>
+                                <textarea id="remarque" name="remarque" class="form-control" rows="3" placeholder="Allergies, accessibilité, langue souhaitée..."></textarea>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <div class="d-flex flex-wrap gap-2">
+                        <button type="button" id="btnCalc" class="btn btn-outline-primary">Calculer / Actualiser</button>
+                        <button type="submit" class="btn btn-primary">Valider la simulation</button>
+                        <button type="reset" id="btnRst" class="btn btn-outline-primary">Réinitialiser</button>
                     </div>
-                    <div class="mb-3 form-check">
-                        <input type="checkbox" class="form-check-input" id="acceptConditions">
-                        <label class="form-check-label" for="acceptConditions">J’accepte les conditions de simulation (aucun paiement réel n’est effectué)</label>
-                    </div>
-                </fieldset>
-                <fieldset>
-                    <legend>3. Vos coordonnées</legend>
-                    <div>
-                        <label for="client-nom">Nom:</label>
-                        <input type="text" id="client-nom" name="nom" placeholder="Ex. : El Abed" required>
-                        <label for="client-prenom">Prénom:</label>
-                        <input type="text" id="client-prenom" name="prenom" placeholder="Ex. : Chadi Amine" required>
-                    </div>
-                    <div>
-                        <label for="client-email">Adresse e-mail:</label>
-                        <input type="email" id="client-email" name="email" placeholder="exemple@domaine.tn" required>
-                    </div>
-                    <div>
-                        <label for="client-tel">Téléphone:</label>
-                        <input type="tel" id="client-tel" name="telephone" placeholder="+216 20 000 000" required>
-                    </div>
-                    <div>
-                        <label for="client-remarque">Remarque ou besoin particulier :</label>
-                        <textarea id="client-remarque" name="remarque" rows="3" placeholder="Allergies, accessibilité, langue souhaitée..."></textarea>
-                    </div>
-                </fieldset>
-                <div>
-                    <button type="button">Valider la simulation</button>
-                    <button type="reset">Réinitialiser</button>
-                </div>
-            </form>
-        </section>
-        <aside>
-            <h2>Récapitulatif de votre estimation</h2>
-            <ul>
-                <li>Activité sélectionnée : <span id="recap-activite">Aucune activité sélectionnée</span></li>
-                <li>Tarif unitaire : <span id="recap-prix-unitaire">0 TND</span></li>
-                <li>Nombre de participants : <span id="recap-participants">1</span></li>
-                <li>Sous-total : <span id="recapSousTotal">0 TND</span></li>
-                <li>Remise groupe (10 % dès 4 pers.) : <span id="recap-remise">0 TND</span></li>
-                <li>Total estimé : 0 TND</li>
-            </ul>
-            <p id="message-confirmation">Simulation enregistrée localement à l’écran : aucune réservation réelle n’a été effectuée.</p>
-        </aside>
+                    <div id="err" class="alert alert-danger d-none mt-3 mb-0" role="alert"></div>
+                </form>
+            </section>
+            <div class="col-12 col-lg-5">
+                <aside>
+                    <h2>Récapitulatif de votre estimation</h2>
+                    <ul>
+                        <li>Activité sélectionnée : <span id="rAct">Aucune</span></li>
+                        <li>Date : <span id="rDt">—</span></li>
+                        <li>Tarif unitaire : <span id="rPu">0</span> TND</li>
+                        <li>Nombre de participants : <span id="rNb">1</span></li>
+                        <li>Sous-total : <span id="rSub">0</span> TND</li>
+                        <li>Remise groupe (10 % dès 4 pers.) : <span id="rRem">0</span> TND</li>
+                        <li class="total">Total estimé : <span id="rTot">0</span> TND</li>
+                    </ul>
+                    <div id="rMsg" class="alert alert-success d-none mb-0" role="status"></div>
+                </aside>
+            </div>
+        </div>
     </main>
     <footer>
-        <nav>
+        <nav aria-label="Navigation secondaire">
             <ul>
                 <li><a href="index.html">Retour à l’accueil</a></li>
                 <li><a href="activites.html">Catalogue des activités</a></li>
@@ -148,6 +153,7 @@
         <p>&copy; 2026 Cap Bon Explorer — Projet pédagogique ISET Nabeul (données et tarifs fictifs).</p>
     </footer>
     <script src="bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
     <script src="js/reservation.js"></script>
 </body>
 </html>

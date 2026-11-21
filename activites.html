@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cap Bon Explorer — Catalogue des activités</title>
     <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Cap Bon Explorer — Catalogue des activités</title>
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom">
             <div class="container">
-                <div class="navbar-brand d-flex align-items-center gap-2">
+                <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="index.html">
                     <img src="images/logo.jpg" alt="Logo Cap Bon Explorer" class="wiw">
-                </div>
-                <a class="navbar-brand fw-bold" href="index.html">Cap Bon Explorer</a>
+                    <span>Cap Bon Explorer</span>
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#CapBonExplorer" aria-controls="CapBonExplorer" aria-expanded="false" aria-label="Afficher la navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="CapBonExplorer">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link active" href="index.html">Accueil</a></li>
-                        <li class="nav-item"><a class="nav-link" href="activites.html">Activités</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="activites.html" aria-current="page">Activités</a></li>
                         <li class="nav-item"><a class="nav-link" href="agenda.html">Agenda</a></li>
                         <li class="nav-item"><a class="nav-link" href="reservation.html">Réservation</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact.html">Contact / FAQ</a></li>
@@ -30,239 +30,70 @@
             </div>
         </nav>
     </header>
-    <main>
+    <main class="container py-4">
         <section>
             <h1>Catalogue des activités au Cap Bon</h1>
             <p>
-                Explorez nos expériences culturelles, artisanales, naturelles et gastronomiques à travers la péninsule. 
+                Explorez nos expériences culturelles, artisanales et naturelles à travers la péninsule.
                 Filtrez les offres selon vos envies et comparez leurs tarifs avant de simuler votre réservation.
             </p>
         </section>
         <section>
             <h2>Rechercher et filtrer</h2>
-            <form>
-                <div>
-                    <label for="recherche-activite">Rechercher par mot-clé :</label>
-                    <input type="search" id="recherche-activite" name="q" placeholder="Ex. : poterie, Kélibia, médina...">
+            <form id="fFiltre" class="row g-3 align-items-end" novalidate>
+                <div class="col-12 col-md-5">
+                    <label for="q" class="form-label">Rechercher par mot-clé :</label>
+                    <input type="search" class="form-control" id="q" name="q" placeholder="Ex. : poterie, Kélibia, médina..." autocomplete="off">
                 </div>
-                <div>
-                    <label for="filtre-categorie">Catégorie :</label>
-                    <select id="filtre-categorie" name="categorie">
-                        <option value="toutes">Toutes les catégories</option>
+                <div class="col-6 col-md-3">
+                    <label for="cat" class="form-label">Catégorie :</label>
+                    <select id="cat" name="cat" class="form-select">
+                        <option value="Toutes">Toutes</option>
                         <option value="Culture">Culture</option>
                         <option value="Artisanat">Artisanat</option>
                         <option value="Nature">Nature</option>
                         <option value="Découverte">Découverte</option>
                     </select>
                 </div>
-                <div>
-                    <label for="filtre-ville">Ville :</label>
-                    <select id="filtre-ville" name="ville">
-                        <option value="toutes">Toutes les villes</option>
-                        <option value="Nabeul">Nabeul</option>
-                        <option value="Hammamet">Hammamet</option>
-                        <option value="Kélibia">Kélibia</option>
-                        <option value="Kerkouane">Kerkouane</option>
-                        <option value="El Haouaria">El Haouaria</option>
-                        <option value="Korba">Korba</option>
+                <div class="col-6 col-md-2">
+                    <label for="tri" class="form-label">Trier par :</label>
+                    <select id="tri" name="tri" class="form-select">
+                        <option value="def">Catalogue</option>
+                        <option value="asc">Prix croissant</option>
+                        <option value="desc">Prix décroissant</option>
                     </select>
                 </div>
-                <div>
-                    <label for="tri-tarif">Trier par :</label>
-                    <select id="tri-tarif" name="tri">
-                        <option value="defaut">Ordre du catalogue</option>
-                        <option value="prix-asc">Tarif croissant</option>
-                        <option value="prix-desc">Tarif décroissant</option>
-                    </select>
+                <div class="col-12 col-md-2">
+                    <button type="button" id="rst" class="btn btn-outline-primary w-100">Réinitialiser</button>
                 </div>
-                <button type="reset">Réinitialiser les filtres</button>
             </form>
-            <p>8 activités disponibles</p>
+            <p class="mt-3 mb-0" aria-live="polite"><span id="cpt">8</span> activité(s) affichée(s)</p>
+            <div id="vide" class="alert alert-warning d-none mt-3" role="status">Aucune activité trouvée. Modifiez votre recherche ou choisissez une autre catégorie.</div>
         </section>
         <section>
             <h2>Nos expériences proposées</h2>
             <div id="liste-activites" class="row g-4">
-                <div class="col-12 col-md-6 col-lg-3">
-                    <article id="A01" class="h-100">
-                        <div class="card-body d-flex flex-column">
-                            <img src="images/medina nabeul.jpg" class="card-img-top" alt="la médina de Nabeul">
-                            <h3>Découverte de la médina</h3>
-                            <p>Référence : A01</p>
-                            <p>Ville : Nabeul | Catégorie : Culture</p>
-                            <p>Durée : 2 heures | Tarif : 20 TND / personne</p>
-                            <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#desc1">Voir le détail</button>
-                            <div class="modal fade" id="desc1" tabindex="-1" aria-labelledby="titreModal" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered">
-                                    <div class="modal-content">
-                                        <div class="modal-header"><h3 class="modal-title fs-5" id="titreModal">description</h3><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Fermer"></button></div>
-                                        <div class="modal-body"><p>Parcourez les ruelles animées du centre historique de Nabeul, ses souks traditionnels et son patrimoine architectural authentique.</p></div>
-                                        <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Fermer</button><button class="btn btn-primary" type="button" data-bs-dismiss="modal">Compris</button></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="reservation.html">Réserver</a>
-                        </div> 
-                    </article>
-                </div>
-                <div class="col-12 col-md-6 col-lg-3">
-                    <article id="A02" class="h-100">
-                        <div class="card-body d-flex flex-column">
-                            <img src="images/poterie nabeul.jpg" class="card-img-top" alt="Artisan potier façonnant l'argile à Nabeul">
-                            <h3>Atelier d’initiation à la poterie</h3>
-                            <p>Référence : A02</p>
-                            <p>Ville : Nabeul | Catégorie : Artisanat</p>
-                            <p>Durée : 1 heures 30 | Tarif : 35 TND / personne</p>
-                            <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#desc2">Voir le détail</button>
-                            <div class="modal fade" id="desc2" tabindex="-1" aria-labelledby="titreModal" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered">
-                                    <div class="modal-content">
-                                        <div class="modal-header"><h3 class="modal-title fs-5" id="titreModal">description</h3><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Fermer"></button></div>
-                                        <div class="modal-body"><p>Initiez-vous au tournage et à la décoration céramique aux côtés d'un maître artisan dans un atelier traditionnel nabeulien.</p></div>
-                                        <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Fermer</button><button class="btn btn-primary" type="button" data-bs-dismiss="modal">Compris</button></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="reservation.html">Réserver</a>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-12 col-md-6 col-lg-3">
-                    <article id="A03" class="h-100">
-                        <img src="images/kerkouane.jpg" class="card-img-top" alt="Vestiges de la cité punique de Kerkouane">
-                        <div class="card-body d-flex flex-column">
-                            <h3>Parcours découverte de Kerkouane</h3>
-                            <p>Référence : A03</p>
-                            <p>Ville : Kerkouane | Catégorie : Culture</p>
-                            <p>Durée : 2 heures 30 | Tarif : 30 TND / personne</p>
-                            <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#desc3">Voir le détail</button>
-                            <div class="modal fade" id="desc3" tabindex="-1" aria-labelledby="titreModal" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered">
-                                    <div class="modal-content">
-                                        <div class="modal-header"><h3 class="modal-title fs-5" id="titreModal">description</h3><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Fermer"></button></div>
-                                        <div class="modal-body"><p>Visite guidée de l'unique cité punique conservée dans son état d'origine, classée au patrimoine mondial de l'UNESCO face à la mer.</p></div>
-                                        <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Fermer</button><button class="btn btn-primary" type="button" data-bs-dismiss="modal">Compris</button></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="reservation.html">Réserver</a>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-12 col-md-6 col-lg-3">
-                    <article id="A04" class="h-100">
-                        <img src="images/Djebel Abderrahmane.jpg" class="card-img-top" alt="Djebel Abderrahmane">
-                        <div class="card-body d-flex flex-column">
-                            <h3>Randonnée découverte — Djebel Abderrahmane</h3>
-                            <p>Référence : A04</p>
-                            <p>Ville : Djebel Abderrahmane | Catégorie : Nature</p>
-                            <p>Durée : 3 heures | Tarif : 25 TND / personne</p>
-                            <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#desc4">Voir le détail</button>
-                            <div class="modal fade" id="desc4" tabindex="-1" aria-labelledby="titreModal" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered">
-                                    <div class="modal-content">
-                                        <div class="modal-header"><h3 class="modal-title fs-5" id="titreModal">description</h3><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Fermer"></button></div>
-                                        <div class="modal-body"><p>Le Djebel Sidi Abderrahmane (ou Djebel Abderrahmane) est un massif montagneux situé dans la péninsule du Cap Bon, dans le gouvernorat de Nabeul (nord-est de la Tunisie), culminant à environ 637 mètres d'altitude</p></div>
-                                        <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Fermer</button><button class="btn btn-primary" type="button" data-bs-dismiss="modal">Compris</button></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="reservation.html">Réserver</a> 
-                        </div>
-                    </article>
-                </div>
-                <div class="col-12 col-md-6 col-lg-3">
-                    <article id="A05" class="h-100">
-                        <img src="images/littoral kelibia.JPG" class="card-img-top" alt="Fort historique et côte turquoise de Kélibia">
-                        <div class="card-body d-flex flex-column">
-                            <h3>Circuit du littoral</h3>
-                            <p>Référence : A05</p>
-                            <p>Ville : Kélibia | Catégorie : Nature</p>
-                            <p>Durée : 3 heures | Tarif : 40 TND / personne</p>
-                            <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#desc5">Voir le détail</button>
-                            <div class="modal fade" id="desc5" tabindex="-1" aria-labelledby="titreModal" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered">
-                                    <div class="modal-content">
-                                        <div class="modal-header"><h3 class="modal-title fs-5" id="titreModal">description</h3><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Fermer"></button></div>
-                                        <div class="modal-body"><p>Balade panoramique le long des plages de sable fin et des criques cristallines dominées par la forteresse historique de Kélibia.</p></div>
-                                        <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Fermer</button><button class="btn btn-primary" type="button" data-bs-dismiss="modal">Compris</button></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="reservation.html">Réserver</a>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-12 col-md-6 col-lg-3">
-                    <article id="A06" class="h-100">
-                        <img src="images/Peinture sur céramique.jpg" class="card-img-top" alt="Peinture sur céramique à Nabeul">
-                        <div class="card-body d-flex flex-column">
-                            <h3>Peinture sur céramique — Nabeul</h3>
-                            <p>Référence : A06</p>
-                            <p>Ville : Nabeul | Catégorie : Artisanat</p>
-                            <p>Durée : 2 heures | Tarif : 25 TND / personne</p>
-                            <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#desc6">Voir le détail</button>
-                            <div class="modal fade" id="desc6" tabindex="-1" aria-labelledby="titreModal" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered">
-                                    <div class="modal-content">
-                                        <div class="modal-header"><h3 class="modal-title fs-5" id="titreModal">description</h3><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Fermer"></button></div>
-                                        <div class="modal-body"><p>La peinture sur céramique en Tunisie allie un artisanat ancestral et une tendance moderne de loisirs créatifs</p></div>
-                                        <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Fermer</button><button class="btn btn-primary" type="button" data-bs-dismiss="modal">Compris</button></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="reservation.html">Réserver</a>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-12 col-md-6 col-lg-3">
-                    <article id="A07" class="h-100">
-                        <img src="images/marche local.jpg" class="card-img-top" alt="Marché local de Nabeul">
-                        <div class="card-body d-flex flex-column">
-                            <h3>Découverte d’un marché local — Nabeul</h3>
-                            <p>Référence : A07</p>
-                            <p>Ville : Nabeul | Catégorie : Découverte</p>
-                            <p>Durée : 1 heures 30 | Tarif : 15 TND / personne</p>
-                            <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#desc7">Voir le détail</button>
-                            <div class="modal fade" id="desc7" tabindex="-1" aria-labelledby="titreModal" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered">
-                                    <div class="modal-content">
-                                        <div class="modal-header"><h3 class="modal-title fs-5" id="titreModal">description</h3><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Fermer"></button></div>
-                                        <div class="modal-body"><p>Le marché local tunisien est un lieu vibrant et coloré où se mêlent les senteurs d'épices, d'olives et de produits frais sous les cris chaleureux des marchands. Véritable cœur battant du quartier, cet espace convivial offre une immersion authentique dans le quotidien et la culture tunisienne.</p></div>
-                                        <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Fermer</button><button class="btn btn-primary" type="button" data-bs-dismiss="modal">Compris</button></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="reservation.html">Réserver</a>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-12 col-md-6 col-lg-3">
-                    <article id="A08" class="h-100">
-                        <img src="images/Promenade photographique.webp" class="card-img-top" alt="Promenade photographique à Hammamet">
-                            <div class="card-body d-flex flex-column">
-                                <h3>Promenade photographique — Hammamet</h3>
-                                <p>Référence : A08</p>
-                                <p>Ville : Hammamet | Catégorie : Découverte</p>
-                                <p>Durée : 2 heures | Tarif : 30 TND / personne</p>
-                                <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#desc8">Voir le détail</button>
-                                <div class="modal fade" id="desc8" tabindex="-1" aria-labelledby="titreModal" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered">
-                                        <div class="modal-content">
-                                            <div class="modal-header"><h3 class="modal-title fs-5" id="titreModal">description</h3><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Fermer"></button></div>
-                                            <div class="modal-body"><p>Une promenade photographique à Hammamet est une balade immersive à travers les ruelles blanches de la médina, ses remparts historiques et son littoral baigné de lumière dorée, idéale pour capturer l'authenticité tunisienne.</p></div>
-                                            <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Fermer</button><button class="btn btn-primary" type="button" data-bs-dismiss="modal">Compris</button></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="reservation.html">Réserver</a>
-                            </div>
-                    </article>
-                </div>
+                <noscript><p>Activez JavaScript pour afficher le catalogue des activités.</p></noscript>
             </div>
         </section>
+        <div class="modal fade" id="modalDet" tabindex="-1" aria-labelledby="modTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title fs-5 border-0 p-0 m-0" id="modTitle">Détails de l’activité</h2>
+                        <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                    </div>
+                    <div class="modal-body" id="modBody"></div>
+                    <div class="modal-footer">
+                        <button class="btn btn-outline-primary" type="button" data-bs-dismiss="modal">Fermer</button>
+                        <a id="modReserver" class="btn btn-primary" href="reservation.html">Réserver</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
     <footer>
-        <nav>
+        <nav aria-label="Navigation secondaire">
             <ul>
                 <li><a href="index.html">Retour à l’accueil</a></li>
                 <li><a href="activites.html">Catalogue des activités</a></li>
@@ -274,6 +105,7 @@
         <p>&copy; 2026 Cap Bon Explorer — Projet pédagogique ISET Nabeul (données et tarifs fictifs).</p>
     </footer>
     <script src="bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
     <script src="js/activites.js"></script>
 </body>
 </html>
