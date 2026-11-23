@@ -69,7 +69,7 @@ Mini_projet/
 │   ├── activites.js      # recherche, filtre, tri, cartes, modale
 │   ├── reservation.js    # calcul, validation, récapitulatif
 │   └── contact.js        # validation du formulaire de contact
-├── images/               # 12 images (voir « Crédits des images »)
+├── images/               # 12 images 
 └── docs/
     └── rapport.pdf
 ```
