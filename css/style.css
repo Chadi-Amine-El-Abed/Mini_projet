@@ -70,10 +70,13 @@ main li {
   border-radius: 10px 10px 0 0;
 }
 .hero-contenu {
-  background-color: navy;
+  background-image: url(../images/banniere-cap-bon.jpg);
+  background-size: cover;       
+  background-position: center;  
+  background-repeat: no-repeat;
   color: white;
   padding: 25px;
-  border-radius: 0 0 10px 10px;
+  border-radius: 10px;
 }
 .hero h1 {
   color: white;
